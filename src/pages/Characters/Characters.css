@@ -1,0 +1,11 @@
+#characters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#character-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}

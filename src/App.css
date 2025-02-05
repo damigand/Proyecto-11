@@ -1,0 +1,23 @@
+:root {
+    --header-height: 70px;
+
+    --margin-xl: 100px;
+    --spacing-header: calc(var(--header-height) + 20px);
+}
+
+header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    margin-top: var(--spacing-header);
+    padding: 0px var(--margin-xl);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
