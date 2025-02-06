@@ -1,0 +1,24 @@
+.location-card {
+    transition: all 0.2s ease;
+    font-size: 14px;
+    padding: 6px 18px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.location-card:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.location-card > .card-name {
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+    .location-card {
+        font-size: 10px;
+    }
+}
