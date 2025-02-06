@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Characters.css";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 
 const url = "https://rickandmortyapi.com/api/character/";
 
@@ -20,7 +21,7 @@ const getCharacters = async (page) => {
 const Characters = () => {
     const [page, setPage] = useState(1);
     const [characters, setCharacters] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = InfiniteScroll();
 
     //Cargo los primeros Characteres.
     useEffect(() => {
@@ -39,23 +40,10 @@ const Characters = () => {
         setPage(page + 1);
     }, [isLoading]);
 
-    //Controla el escuchador de la ventana para evitar duplicados.
-    useEffect(() => {
-        window.addEventListener("scroll", checkBottomPage);
-        return () => window.removeEventListener("scroll", checkBottomPage);
-    }, []);
-
-    //Comprueba si está al final de la página.
-    function checkBottomPage() {
-        const scrollY = window.scrollY;
-        const innerHeight = window.innerHeight;
-        const bodyScroll = document.body.scrollHeight;
-
-        if (scrollY + innerHeight >= bodyScroll) setIsLoading(true);
-    }
-
     return (
         <div id="characters">
+            <p>Here you can see all Rick & Morty Characters</p>
+            <p>Click on one to see more details</p>
             <ul id="character-list">
                 {characters.map((c, index) => (
                     <CharacterCard key={index} character={c} />

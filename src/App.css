@@ -2,6 +2,8 @@
     --header-height: 70px;
 
     --margin-xl: 100px;
+    --margin-l: 40px;
+    --margin-s: 10px;
     --spacing-header: calc(var(--header-height) + 20px);
 }
 
@@ -20,4 +22,16 @@ main {
 a {
     color: white;
     text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+    main {
+        padding: 0px var(--margin-l);
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        padding: 0px var(--margin-s);
+    }
 }
