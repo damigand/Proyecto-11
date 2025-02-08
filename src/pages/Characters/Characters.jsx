@@ -19,7 +19,7 @@ const getCharacters = async (page) => {
 };
 
 const Characters = () => {
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [characters, setCharacters] = useState([]);
     const [isLoading, setIsLoading] = InfiniteScroll();
 

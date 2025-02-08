@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Locations.css";
-import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll";
+import { InfiniteScroll, canScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 import LocationCard from "../../components/LocationCard/LocationCard";
 
 const url = "https://rickandmortyapi.com/api/location/";
@@ -19,7 +19,7 @@ const getLocations = async (page) => {
 };
 
 const Locations = () => {
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [locations, setLocations] = useState([]);
     const [isLoading, setIsLoading] = InfiniteScroll();
 
@@ -36,6 +36,16 @@ const Locations = () => {
         if (!isLoading) return;
         setPage(page + 1);
     }, [isLoading]);
+
+    useEffect(() => {
+        //Si el usuario tiene una pantalla muy alta
+        //Y no tiene scroll para usar el "Infinite Scroll",
+        //Lo causamos nosotros.
+        const check = canScroll();
+        if (!check) {
+            setIsLoading(true);
+        }
+    });
 
     return (
         <div id="locations">

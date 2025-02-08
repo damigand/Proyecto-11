@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 
+export function canScroll() {
+    return document.documentElement.scrollHeight > document.documentElement.clientHeight;
+}
+
 export const InfiniteScroll = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     //Controla el escuchador de la ventana para evitar duplicados.
     useEffect(() => {
         window.addEventListener("scroll", checkBottomPage);
+
         return () => window.removeEventListener("scroll", checkBottomPage);
     }, []);
 
