@@ -13,7 +13,7 @@ const getLocations = async (page) => {
         return {
             id: l.id,
             name: l.name,
-            image: l.image
+            type: l.type
         };
     });
 };

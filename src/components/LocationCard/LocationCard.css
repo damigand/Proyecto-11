@@ -5,6 +5,11 @@
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .location-card:hover {
@@ -15,6 +20,13 @@
     overflow: hidden;
     text-wrap: nowrap;
     text-overflow: ellipsis;
+}
+
+.location-card > .card-type {
+    font-size: 20px;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 900px) {
