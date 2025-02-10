@@ -28,6 +28,9 @@ const Character = () => {
     const lowercaseGender = String(character.gender).toLowerCase();
     const lowercaseSpecie = String(character.species).toLowerCase();
 
+    const locationId = character.location?.url.split("location/")[1];
+    const originId = character.origin?.url.split("location/")[1];
+
     console.log(character.episode);
 
     return (
@@ -68,8 +71,7 @@ const Character = () => {
             </div>
             <div className="character-origin">
                 <h1>Location of origin</h1>
-
-                <Link to={`/locations/${character.origin?.url.split("location/")[1]}`}>
+                <Link to={originId ? `/locations/${originId}` : ""}>
                     <div className="origin-link">
                         <span className="origin-name">{character.origin?.name}</span>
                     </div>
@@ -77,7 +79,7 @@ const Character = () => {
             </div>
             <div className="character-location">
                 <h1>Current Location</h1>
-                <Link to={`/locations/${character.location?.url.split("location/")[1]}`}>
+                <Link to={locationId ? `/locations/${locationId}` : ""}>
                     <div className="location-link">
                         <span className="location-name">{character.location?.name}</span>
                     </div>
