@@ -1,8 +1,53 @@
-import React from "react";
 import "./Episodes.css";
+import React, { useEffect, useState } from "react";
+import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll.jsx";
+import EpisodeCard from "../../components/EpisodeCard/EpisodeCard.jsx";
+
+const url = "https://rickandmortyapi.com/api/episode";
+
+const getEpisodes = async (page) => {
+    const response = await fetch(`${url}?page=${page}`);
+    const json = await response.json();
+
+    return json.results.map((e) => {
+        return {
+            id: e.id,
+            name: e.name,
+            episode: e.episode,
+        };
+    });
+};
 
 const Episodes = () => {
-    return <div>Episodes</div>;
+    const [page, setPage] = useState(0);
+    const [episodes, setEpisodes] = useState([]);
+    const [isLoading, setIsLoading] = InfiniteScroll();
+
+    useEffect(() => {
+        getEpisodes(page).then((l) => {
+            const copy = episodes;
+            const newEpisodes = copy.concat(l);
+            setEpisodes(newEpisodes);
+            setIsLoading(false);
+        });
+    }, [page]);
+
+    useEffect(() => {
+        if (!isLoading) return;
+        setPage(page + 1);
+    }, [isLoading]);
+
+    return (
+        <div id="episodes">
+            <p>Here you can see all Rick & Morty episodes</p>
+            <p>Click on one to see more details</p>
+            <ul id="episodes-list">
+                {episodes.map((l, index) => (
+                    <EpisodeCard key={index} episode={l} />
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default Episodes;

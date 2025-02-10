@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Character.css";
 
@@ -27,6 +28,8 @@ const Character = () => {
     const lowercaseGender = String(character.gender).toLowerCase();
     const lowercaseSpecie = String(character.species).toLowerCase();
 
+    console.log(character.episode);
+
     return (
         <div id="character">
             <div className="character-info">
@@ -47,20 +50,38 @@ const Character = () => {
                         <h4>Species</h4>
                         <span className={"species " + lowercaseSpecie}>{character.species}</span>
                     </div>
+                    <div className="character-episodes">
+                        <h3>Episodes</h3>
+                        <div className="episode-list">
+                            {character.episode?.map((e) => {
+                                const number = e.split("episode/")[1];
+
+                                return (
+                                    <Link className="episode-link" to={`/episodes/${number}`}>
+                                        <h1>{number}</h1>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
-                {/* Aqui van los episodios */}
             </div>
             <div className="character-origin">
                 <h1>Location of origin</h1>
-                <div>
-                    <span className="origin-name">{character.origin?.name}</span>
-                    {/* Aqui iría el Link del origen, envolviendo el span. */}
-                </div>
+
+                <Link to={`/locations/${character.origin?.url.split("location/")[1]}`}>
+                    <div className="origin-link">
+                        <span className="origin-name">{character.origin?.name}</span>
+                    </div>
+                </Link>
             </div>
             <div className="character-location">
                 <h1>Current Location</h1>
-                <span className="location-name">{character.location?.name}</span>
-                {/* Aqui iría el Link del location, envolviendo el span. */}
+                <Link to={`/locations/${character.location?.url.split("location/")[1]}`}>
+                    <div className="location-link">
+                        <span className="location-name">{character.location?.name}</span>
+                    </div>
+                </Link>
             </div>
         </div>
     );

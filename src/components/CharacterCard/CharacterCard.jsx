@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CharacterCard = ({ character }) => {
     return (
-        <Link to={{ pathname: `/characters/${character.id}`, state: character }}>
+        <Link to={`/characters/${character.id}`}>
             <div className="character-card">
                 <img src={character.image} />
                 <h1 className="card-name">{character.name}</h1>
