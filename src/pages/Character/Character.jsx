@@ -31,8 +31,6 @@ const Character = () => {
     const locationId = character.location?.url.split("location/")[1];
     const originId = character.origin?.url.split("location/")[1];
 
-    console.log(character.episode);
-
     return (
         <div id="character">
             <div className="character-info">
@@ -56,11 +54,15 @@ const Character = () => {
                     <div className="character-episodes">
                         <h3>Episodes</h3>
                         <div className="episode-list">
-                            {character.episode?.map((e) => {
+                            {character.episode?.map((e, index) => {
                                 const number = e.split("episode/")[1];
 
                                 return (
-                                    <Link className="episode-link" to={`/episodes/${number}`}>
+                                    <Link
+                                        key={index}
+                                        className="episode-link"
+                                        to={`/episodes/${number}`}
+                                    >
                                         <h1>{number}</h1>
                                     </Link>
                                 );

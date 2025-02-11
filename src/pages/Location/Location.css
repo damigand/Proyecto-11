@@ -1,0 +1,72 @@
+#location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.location-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.location-name {
+    text-align: center;
+}
+
+.location-info {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.location-type,
+.location-dimension {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    gap: 5px;
+}
+
+.location-type span:nth-child(2),
+.location-dimension span:nth-child(2) {
+    padding: 3px 9px;
+    border: 1px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.location-residents {
+    width: 100%;
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.resident {
+    transition: all 0.2s ease;
+    width: 120px;
+    height: 120px;
+    padding: 5px;
+}
+
+.resident > img {
+    width: 100%;
+}
+
+.location-residents:has(.resident:hover) .resident:not(:hover) {
+    opacity: 0.3;
+}
+
+.location-residents .resident:hover {
+    padding: 0;
+}
