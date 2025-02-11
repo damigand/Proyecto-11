@@ -3,20 +3,7 @@ import React, { useEffect, useState } from "react";
 import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll.jsx";
 import EpisodeCard from "../../components/EpisodeCard/EpisodeCard.jsx";
 
-const url = "https://rickandmortyapi.com/api/episode";
-
-const getEpisodes = async (page) => {
-    const response = await fetch(`${url}?page=${page}`);
-    const json = await response.json();
-
-    return json.results.map((e) => {
-        return {
-            id: e.id,
-            name: e.name,
-            episode: e.episode,
-        };
-    });
-};
+import { getEpisodes } from "../../components/API/API.js";
 
 const Episodes = () => {
     const [page, setPage] = useState(0);

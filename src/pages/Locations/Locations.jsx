@@ -3,20 +3,7 @@ import "./Locations.css";
 import { InfiniteScroll, canScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 import LocationCard from "../../components/LocationCard/LocationCard";
 
-const url = "https://rickandmortyapi.com/api/location/";
-
-const getLocations = async (page) => {
-    const response = await fetch(`${url}?page=${page}`);
-    const json = await response.json();
-
-    return json.results.map((l) => {
-        return {
-            id: l.id,
-            name: l.name,
-            type: l.type
-        };
-    });
-};
+import { getLocations } from "../../components/API/API";
 
 const Locations = () => {
     const [page, setPage] = useState(0);

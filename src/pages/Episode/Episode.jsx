@@ -2,38 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Episode.css";
-
-const url = "https://rickandmortyapi.com/api/episode/";
-
-const getEpisode = async (id) => {
-    const response = await fetch(`${url}${id}`);
-    const json = await response.json();
-
-    const object = {
-        name: json.name,
-        episode: json.episode,
-        air_date: json.air_date
-    };
-
-    let characters = "";
-
-    for (const url of json.characters) {
-        const id = url.split("character/")[1];
-        characters += id + ",";
-    }
-
-    console.log(characters);
-
-    const charactersUrl = `https://rickandmortyapi.com/api/character/${characters}`;
-    const charactersResponse = await fetch(charactersUrl);
-    const charactersJson = await charactersResponse.json();
-
-    object.characters = charactersJson.map((r) => {
-        return { image: r.image, url: r.url };
-    });
-
-    return object;
-};
+import { getEpisode } from "../../components/API/API";
 
 const Episode = () => {
     const { id } = useParams();

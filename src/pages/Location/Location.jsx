@@ -3,35 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Location.css";
 
-const url = "https://rickandmortyapi.com/api/location/";
-
-const getLocation = async (id) => {
-    const response = await fetch(`${url}${id}`);
-    const json = await response.json();
-
-    const object = {
-        name: json.name,
-        type: json.type,
-        dimension: json.dimension
-    };
-
-    let residents = "";
-
-    for (const url of json.residents) {
-        const id = url.split("character/")[1];
-        residents += id + ",";
-    }
-
-    const residentsUrl = `https://rickandmortyapi.com/api/character/${residents}`;
-    const residentsResponse = await fetch(residentsUrl);
-    const residentsJson = await residentsResponse.json();
-
-    object.residents = residentsJson.map((r) => {
-        return { image: r.image, url: r.url };
-    });
-
-    return object;
-};
+import { getLocation } from "../../components/API/API";
 
 const Location = () => {
     const { id } = useParams();

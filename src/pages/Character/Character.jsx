@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import { getCharacter } from "../../components/API/API";
 import "./Character.css";
-
-const url = "https://rickandmortyapi.com/api/character/";
-
-const getCharacter = async (id) => {
-    const response = await fetch(`${url}${id}`);
-    const json = await response.json();
-    return json;
-};
 
 const Character = () => {
     //He intentado mil veces pasar el objeto character

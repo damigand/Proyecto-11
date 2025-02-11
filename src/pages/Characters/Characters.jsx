@@ -3,20 +3,7 @@ import "./Characters.css";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 
-const url = "https://rickandmortyapi.com/api/character/";
-
-const getCharacters = async (page) => {
-    const response = await fetch(`${url}?page=${page}`);
-    const json = await response.json();
-
-    return json.results.map((p) => {
-        return {
-            id: p.id,
-            name: p.name,
-            image: p.image
-        };
-    });
-};
+import { getCharacters } from "../../components/API/API";
 
 const Characters = () => {
     const [page, setPage] = useState(0);
