@@ -25,11 +25,6 @@ const Home = () => {
                     </Link>
                 </p>
             </div>
-            <div className="about">
-                <h4>See more about damigand</h4>
-                <Link>{/*Github*/}</Link>
-                <Link>{/*LinkedIn*/}</Link>
-            </div>
         </div>
     );
 };

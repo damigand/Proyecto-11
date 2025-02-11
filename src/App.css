@@ -24,6 +24,21 @@ a {
     text-decoration: none;
 }
 
+body:has(#mobile-menu.active) {
+    overflow-y: hidden;
+}
+
+body:has(#mobile-menu.active) main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
 @media (max-width: 1000px) {
     main {
         padding: 0px var(--margin-l);

@@ -1,5 +1,8 @@
-nav {
+header {
     z-index: 100;
+}
+
+nav {
     height: 100%;
     border-bottom: 1px solid white;
     background-color: #242424;
@@ -18,7 +21,7 @@ nav a {
     font-size: 20px;
 }
 
-nav a::after {
+nav a:not(.mobile-link)::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -32,4 +35,25 @@ nav a::after {
 nav a.active::after {
     transition: all 0.2s ease;
     width: 120%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .mobile-menu {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .mobile-menu i {
+        font-size: 32px;
+    }
+
+    nav li:not(.mobile-menu) {
+        display: none;
+    }
 }

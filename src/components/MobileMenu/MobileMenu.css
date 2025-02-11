@@ -1,0 +1,26 @@
+#mobile-menu {
+    transition: all 0.5s ease;
+    transform: translateX(110%);
+    position: absolute;
+    top: calc(var(--header-height) - 1px);
+    right: 0;
+    display: flex;
+    height: calc(100svh - var(--header-height));
+    width: 50%;
+    background-color: #242424;
+    border-left: 1px solid white;
+    z-index: 100;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+#mobile-menu.active {
+    transition: all 0.5s ease;
+    transform: translateX(0);
+}
+
+.mobile-link.active {
+    color: coral;
+}

@@ -1,0 +1,74 @@
+#episode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.episode-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.episode-name {
+    text-align: center;
+}
+
+.episode-info {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.episode-season,
+.episode-episode,
+.episode-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    gap: 5px;
+}
+
+.episode-season span:nth-child(2),
+.episode-episode span:nth-child(2),
+.episode-date span:nth-child(2) {
+    padding: 3px 9px;
+    border: 1px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.episode-characters {
+    width: 100%;
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.character {
+    transition: all 0.2s ease;
+    width: 120px;
+    height: 120px;
+    padding: 5px;
+}
+
+.character > img {
+    width: 100%;
+}
+
+.episode-characters:has(.character:hover) .character:not(:hover) {
+    opacity: 0.3;
+}
+
+.episode-characters .character:hover {
+    padding: 0;
+}
