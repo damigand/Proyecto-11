@@ -70,3 +70,18 @@
 .location-residents .resident:hover {
     padding: 0;
 }
+
+h2 {
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .location-info {
+        flex-direction: column;
+    }
+
+    .resident {
+        width: 60px;
+        height: 60px;
+    }
+}

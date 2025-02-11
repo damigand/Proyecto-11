@@ -48,7 +48,7 @@ const Location = () => {
                 <div className="location-info">
                     <span className="location-type">
                         <span>TYPE</span>
-                        <span>{location.type}</span>
+                        <span>{location.type ? location.type : "?"}</span>
                     </span>
                     <span className="location-dimension">
                         <span>DIMENSION</span>

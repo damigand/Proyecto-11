@@ -36,12 +36,12 @@ const Character = () => {
             <div className="character-info">
                 <img src={character.image} />
                 <div className="character-text">
+                    <div className="character-name">
+                        <span className="name">{character.name}</span>
+                    </div>
                     <div className="character-status">
                         <h4>Status</h4>
                         <span className={"status " + lowercaseStatus}>{character.status}</span>
-                    </div>
-                    <div className="character-name">
-                        <span className="name">{character.name}</span>
                     </div>
                     <div className="character-gender">
                         <h4>Gender</h4>

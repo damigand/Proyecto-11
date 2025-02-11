@@ -72,3 +72,10 @@
 .episode-characters .character:hover {
     padding: 0;
 }
+
+@media (max-width: 500px) {
+    .character {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -10,16 +10,12 @@
     width: 100%;
     align-items: flex-start;
     gap: 5px;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .location-card:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.location-card > .card-name {
-    overflow: hidden;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
 }
 
 .location-card > .card-type {
@@ -32,5 +28,15 @@
 @media (max-width: 900px) {
     .location-card {
         font-size: 10px;
+    }
+
+    .location-card > .card-type {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .location-card > .card-name {
+        font-size: 16px;
     }
 }
