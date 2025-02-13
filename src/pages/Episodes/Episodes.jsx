@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll.jsx";
 import EpisodeCard from "../../components/EpisodeCard/EpisodeCard.jsx";
 
-import { getEpisodes } from "../../components/API/API.js";
+import { getEpisodes } from "../../utils/API/API.js";
 
 const Episodes = () => {
     const [page, setPage] = useState(0);

@@ -3,7 +3,7 @@ import "./Locations.css";
 import { InfiniteScroll, canScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 import LocationCard from "../../components/LocationCard/LocationCard";
 
-import { getLocations } from "../../components/API/API";
+import { getLocations } from "../../utils/API/API";
 
 const Locations = () => {
     const [page, setPage] = useState(0);

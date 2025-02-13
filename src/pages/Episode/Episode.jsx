@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Episode.css";
-import { getEpisode } from "../../components/API/API";
+import { getEpisode } from "../../utils/API/API";
 
 const Episode = () => {
     const { id } = useParams();

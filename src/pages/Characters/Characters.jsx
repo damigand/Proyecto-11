@@ -3,7 +3,7 @@ import "./Characters.css";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import { InfiniteScroll } from "../../components/InfiniteScroll/InfiniteScroll";
 
-import { getCharacters } from "../../components/API/API";
+import { getCharacters } from "../../utils/API/API";
 
 const Characters = () => {
     const [page, setPage] = useState(0);

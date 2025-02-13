@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Location.css";
 
-import { getLocation } from "../../components/API/API";
+import { getLocation } from "../../utils/API/API";
 
 const Location = () => {
     const { id } = useParams();
