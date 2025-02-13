@@ -11,7 +11,7 @@ import Locations from "./pages/Locations/Locations.jsx";
 import Location from "./pages/Location/Location.jsx";
 import Episodes from "./pages/Episodes/Episodes.jsx";
 import Episode from "./pages/Episode/Episode.jsx";
-import NotFound from "./pages/NotFound/NotFOund.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
