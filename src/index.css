@@ -1,9 +1,25 @@
 :root {
+    --header-height: 70px;
+
+    --bg-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
+
+    --black-03: rgba(0, 0, 0, 0.3);
+    --black-05: rgba(0, 0, 0, 0.5);
+    --white-05: rgba(255, 255, 255, 0.5);
+
+    --hover-border: 1px solid var(--white-05);
+
+    --margin-xl: 100px;
+    --margin-l: 40px;
+    --margin-s: 10px;
+    --spacing-header: calc(var(--header-height) + 20px);
+
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
 
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;

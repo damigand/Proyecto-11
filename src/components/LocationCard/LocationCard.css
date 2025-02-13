@@ -2,7 +2,7 @@
     transition: all 0.2s ease;
     font-size: 14px;
     padding: 6px 18px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--black-03);
     border-radius: 5px;
     border: 1px solid transparent;
     display: flex;
@@ -15,14 +15,14 @@
 }
 
 .location-card:hover {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: var(--hover-border);
 }
 
 .location-card > .card-type {
     font-size: 20px;
     padding: 4px 10px;
     border: 1px solid transparent;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--black-03);
 }
 
 @media (max-width: 900px) {

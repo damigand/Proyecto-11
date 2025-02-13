@@ -5,7 +5,7 @@ header {
 nav {
     height: 100%;
     border-bottom: 1px solid white;
-    background-color: #242424;
+    background-color: var(--bg-color);
 }
 
 nav > ul {
